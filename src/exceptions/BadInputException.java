@@ -1,7 +1,7 @@
 package exceptions;
 
-public class BadInputException extends RuntimeException {
-  public BadInputException(String message) {
-    super(message);
-  }
+public class BadInputException extends Exception {
+    public BadInputException(String message) {
+        super(message);
+    }
 }
