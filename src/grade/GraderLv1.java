@@ -4,11 +4,16 @@ import generate.Generator;
 import generate.GeneratorLv1;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GraderLv1 implements Grader {
 
-    private final int answer = (new GeneratorLv1()).generate();
+    Generator generator;
+    private final int answer;
+
+    public GraderLv1(Generator generator) {
+        this.generator = generator;
+        this.answer = generator.generate();
+    }
 
     @Override
     public int grade(int number) {

@@ -4,12 +4,15 @@ import grade.GraderLv1;
 import parse.Parser;
 import parse.ParserLv1;
 
-import java.util.Scanner;
-
 public class BaseballLv1 implements Baseball {
 
-    Parser parser = new ParserLv1();
-    Grader grader = new GraderLv1();
+    Grader grader;
+    Parser parser;
+
+    public BaseballLv1(Grader grader, Parser parser) {
+        this.grader = grader;
+        this.parser = parser;
+    }
 
     @Override
     public int hit(String userInput) {

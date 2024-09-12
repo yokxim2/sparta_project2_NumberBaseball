@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class GameMain {
 
+    private final Baseball baseBall;
+
+    public GameMain(Baseball baseBall) {
+        this.baseBall = baseBall;
+    }
+
     public static void main(String[] args) {
-        Baseball player = new BaseballLv1();
+        GameConfig config = new GameConfig();
+        GameMain game = config.setUpGameMain();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(" < 게임을 시작합니다 > ");
@@ -12,7 +19,7 @@ public class GameMain {
             System.out.print("숫자를 입력하세요: " );
             String userInput = scanner.nextLine();
 
-            if (player.hit(userInput) == 3) {
+            if (game.baseBall.hit(userInput) == 3) {
                 break;
             }
         }
