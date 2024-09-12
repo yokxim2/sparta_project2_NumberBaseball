@@ -9,11 +9,11 @@ import java.util.List;
 public class GraderLv1 implements Grader {
 
     private final int answer = (new GeneratorLv1()).generate();
-    private int strikeCount = 0;
-    private int ballCount = 0;
 
     @Override
     public int grade(int number) {
+        int strikeCount = 0;
+        int ballCount = 0;
         ArrayList<Integer> answerToList = numberToList(answer);
         ArrayList<Integer> targetNumberToList = numberToList(number);
         for (int i = 0; i < targetNumberToList.size(); i++) {
@@ -26,7 +26,7 @@ public class GraderLv1 implements Grader {
                 }
             }
         }
-        printResult();
+        printResult(strikeCount, ballCount);
         return strikeCount;
     }
 
@@ -40,7 +40,7 @@ public class GraderLv1 implements Grader {
         return list;
     }
 
-    private void printResult() {
+    private void printResult(int strikeCount, int ballCount) {
         if (strikeCount == 3) {
             System.out.println("정답입니다!");
         } else if (strikeCount == 0 && ballCount == 0) {
