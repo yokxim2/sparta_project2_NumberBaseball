@@ -1,5 +1,5 @@
 package generate;
 
 public interface Generator {
-    void generate();
+    int generate();
 }
