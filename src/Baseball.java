@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
 public interface Baseball {
+    int hit(String userInput);
 }
