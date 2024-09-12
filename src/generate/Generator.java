@@ -1,4 +1,5 @@
-package grade;
+package generate;
 
-public class Generator {
+public interface Generator {
+    void generate();
 }
