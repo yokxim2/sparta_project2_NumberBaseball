@@ -10,7 +10,7 @@ public class ParserLv1 implements Parser {
     @Override
     public int parseNumber(String input) throws BadInputException {
         int number = validateIfPureNumber(input);
-        validateIfPositiveNumber(number);          // check -> validator
+        validateIfPositiveNumber(number);
         validateDigitCount(number);
         validateZeroNeverUsed(number);
         validateIfDuplicateNumberUsed(number);

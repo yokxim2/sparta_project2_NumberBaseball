@@ -22,7 +22,7 @@ public class GameConfig {
     public Baseball createBaseball() {
         Grader grader = createGrader();
         Parser parser = createParser();
-        return new BaseballLv1(grader, parser);
+        return new Baseball(grader, parser);
     }
 
     public GameMain createGameMain() {
