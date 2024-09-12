@@ -9,16 +9,16 @@ public class ParserLv1 implements Parser {
 
     @Override
     public int parseNumber(String input) throws BadInputException {
-        int number = pureNumberCheck(input);
-        negativeCheck(number);
-        digitsCheck(number);
-        numberBoundCheck(number);
-        numberDuplicateCheck(number);
+        int number = validateIfPureNumber(input);
+        validateIfPositiveNumber(number);          // check -> validator
+        validateDigitCount(number);
+        validateZeroNeverUsed(number);
+        validateIfDuplicateNumberUsed(number);
 
         return number;
     }
 
-    private int pureNumberCheck(String input) throws NotNumberException {
+    private int validateIfPureNumber(String input) throws NotNumberException {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
@@ -26,19 +26,19 @@ public class ParserLv1 implements Parser {
         }
     }
 
-    private void negativeCheck(int number) throws NegativeNumberException {
+    private void validateIfPositiveNumber(int number) throws NegativeNumberException {
         if (number < 0) {
             throw new NegativeNumberException();
         }
     }
 
-    private void digitsCheck(int number) throws NotAllowedDigitsException {
+    private void validateDigitCount(int number) throws NotAllowedDigitsException {
         if (number < 100 || number > 1000) {
             throw new NotAllowedDigitsException(3);
         }
     }
 
-    private void numberBoundCheck(int number) throws NumberOutOfBoundException {
+    private void validateZeroNeverUsed(int number) throws NumberOutOfBoundException {
         int num = number;
         while (num > 0) {
             int digit = num % 10;
@@ -49,7 +49,7 @@ public class ParserLv1 implements Parser {
         }
     }
 
-    private void numberDuplicateCheck(int number) throws DuplicateNumberException {
+    private void validateIfDuplicateNumberUsed(int number) throws DuplicateNumberException {
         List numberList = new ArrayList();
         int num = number;
         while (num > 0) {
