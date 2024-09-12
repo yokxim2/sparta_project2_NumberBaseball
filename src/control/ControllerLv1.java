@@ -1,13 +1,15 @@
+package control;
+
 import exceptions.BadInputException;
 import grade.Grader;
 import parse.Parser;
 
-public class Baseball {
+public class ControllerLv1 implements Controller {
 
     Grader grader;
     Parser parser;
 
-    public Baseball(Grader grader, Parser parser) {
+    public ControllerLv1(Grader grader, Parser parser) {
         this.grader = grader;
         this.parser = parser;
     }

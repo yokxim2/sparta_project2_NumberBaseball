@@ -1,29 +1,18 @@
-import java.util.Scanner;
+import scanner.InputReader;
 
 public class GameMain {
 
-    private final Baseball baseBall;
+    InputReader inputReader;
 
-    public GameMain(Baseball baseBall) {
-        this.baseBall = baseBall;
+    public GameMain(InputReader inputReader) {
+        this.inputReader = inputReader;
     }
 
     public static void main(String[] args) {
         GameConfig config = new GameConfig();
         GameMain game = config.createGameMain();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(" < 게임을 시작합니다 > ");
-
-        while (true) {
-            System.out.print("숫자를 입력하세요: " );
-            String userInput = scanner.nextLine();
-
-            if (game.baseBall.hit(userInput) == 3) {
-                break;
-            }
-        }
-
+        game.inputReader.start();
         System.out.println("== 게임을 종료합니다. ==");
     }
 }

@@ -1,9 +1,13 @@
+import control.Controller;
+import control.ControllerLv1;
 import generate.Generator;
 import generate.GeneratorLv1;
 import grade.Grader;
 import grade.GraderLv1;
 import parse.Parser;
 import parse.ParserLv1;
+import scanner.InputReader;
+import scanner.InputReaderLv1;
 
 public class GameConfig {
     public Generator createGenerator() {
@@ -19,14 +23,19 @@ public class GameConfig {
         return new ParserLv1();
     }
 
-    public Baseball createBaseball() {
+    public Controller createController() {
         Grader grader = createGrader();
         Parser parser = createParser();
-        return new Baseball(grader, parser);
+        return new ControllerLv1(grader, parser);
+    }
+
+    public InputReader createInputReader() {
+        Controller controller = createController();
+        return new InputReaderLv1(controller);
     }
 
     public GameMain createGameMain() {
-        Baseball baseball = createBaseball();
-        return new GameMain(baseball);
+        InputReader inputReader = createInputReader();
+        return new GameMain(inputReader);
     }
 }
