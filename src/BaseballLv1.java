@@ -12,8 +12,13 @@ public class BaseballLv1 implements Baseball {
     Grader grader = new GraderLv1();
 
     @Override
-    public int hit(String userInput) throws BadInputException {
-        int inputInt = parser.parseNumber(userInput);
-        return grader.grade(inputInt);
+    public int hit(String userInput) {
+        try {
+            int inputInt = parser.parseNumber(userInput);
+            return grader.grade(inputInt);
+        } catch (BadInputException e) {
+            System.out.println(e.getMessage());
+        }
+        return -1;
     }
 }
