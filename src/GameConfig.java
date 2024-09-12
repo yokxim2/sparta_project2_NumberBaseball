@@ -25,7 +25,7 @@ public class GameConfig {
         return new BaseballLv1(grader, parser);
     }
 
-    public GameMain setUpGameMain() {
+    public GameMain createGameMain() {
         Baseball baseball = createBaseball();
         return new GameMain(baseball);
     }

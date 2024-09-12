@@ -10,7 +10,7 @@ public class GameMain {
 
     public static void main(String[] args) {
         GameConfig config = new GameConfig();
-        GameMain game = config.setUpGameMain();
+        GameMain game = config.createGameMain();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(" < 게임을 시작합니다 > ");
