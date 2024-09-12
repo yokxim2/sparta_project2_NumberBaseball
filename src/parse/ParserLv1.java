@@ -1,4 +1,9 @@
-package lv1.parse;
+package parse;
 
-public class ParserLv1 {
+public class ParserLv1 implements Parser {
+
+    @Override
+    public int parseNumber(String input) {
+
+    }
 }
