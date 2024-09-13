@@ -1,7 +1,5 @@
 package grade;
 
-import generate.Generator;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -58,6 +56,15 @@ public class GraderLv3 implements Grader {
         return strikeCount;
     }
 
+    @Override
+    public void getMatchHistory() {
+        System.out.println(" < 게임 기록 보기 > ");
+        for (int i = 1; i <= matchHistory.size(); i++) {
+            System.out.println(i + "번째 게임 : 시도 횟수 - " + matchHistory.get(i));
+        }
+        System.out.println();
+    }
+
     private void saveMatchHistory() {
         matchHistory.put(currentGame, attemptCount);
     }
@@ -75,14 +82,6 @@ public class GraderLv3 implements Grader {
             number /= 10;
         }
         return list;
-    }
-
-    public void getMatchHistory() {
-        System.out.println(" < 게임 기록 보기 > ");
-        for (int i = 1; i <= matchHistory.size(); i++) {
-            System.out.println(i + "번째 게임 : 시도 횟수 - " + matchHistory.get(i));
-        }
-        System.out.println();
     }
 
     private void printResult(int strikeCount, int ballCount) {

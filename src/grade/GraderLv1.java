@@ -1,14 +1,10 @@
 package grade;
 
-import generate.Generator;
-import generate.GeneratorLv1;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class GraderLv1 implements Grader {
 
-    Generator generator;
     private final int answer;
 
     public GraderLv1() {
@@ -45,6 +41,11 @@ public class GraderLv1 implements Grader {
         }
         printResult(strikeCount, ballCount);
         return strikeCount;
+    }
+
+    @Override
+    public void getMatchHistory() {
+        System.out.println("구현하지 않는 기능입니다.");
     }
 
     private ArrayList<Integer> numberToList(int number) {

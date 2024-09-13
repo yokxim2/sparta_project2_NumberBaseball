@@ -34,7 +34,7 @@ public class InputReaderLv3 implements InputReader {
                     }
                     break;
                 case "2":
-                    System.out.println("지원하지 않는 기능입니다. 다른 옵션을 선택해 주세요.");
+                    controller.getMatchHistory();
                     break;
                 case "3":
                     gameEnd = true;

@@ -2,6 +2,7 @@ package control;
 
 import exceptions.BadInputException;
 import grade.Grader;
+import grade.GraderLv3;
 import parse.Parser;
 
 public class ControllerLv1 implements Controller {
@@ -22,5 +23,10 @@ public class ControllerLv1 implements Controller {
             System.out.println(e.getMessage());
         }
         return -1;
+    }
+
+    @Override
+    public void getMatchHistory() {
+        grader.getMatchHistory();
     }
 }
