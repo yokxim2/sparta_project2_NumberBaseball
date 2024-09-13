@@ -8,15 +8,12 @@ import parse.Parser;
 import parse.ParserLv1;
 import scanner.InputReader;
 import scanner.InputReaderLv1;
+import scanner.InputReaderLv2;
 
 public class GameConfig {
-    public Generator createGenerator() {
-        return new GeneratorLv1();
-    }
 
     public Grader createGrader() {
-        Generator generator = createGenerator();
-        return new GraderLv1(generator);
+        return new GraderLv1();
     }
 
     public Parser createParser() {
@@ -31,7 +28,8 @@ public class GameConfig {
 
     public InputReader createInputReader() {
         Controller controller = createController();
-        return new InputReaderLv1(controller);
+//        return new InputReaderLv1(controller);
+        return new InputReaderLv2(controller);
     }
 
     public GameMain createGameMain() {

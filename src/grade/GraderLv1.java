@@ -4,15 +4,27 @@ import generate.Generator;
 import generate.GeneratorLv1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GraderLv1 implements Grader {
 
     Generator generator;
     private final int answer;
 
-    public GraderLv1(Generator generator) {
-        this.generator = generator;
-        this.answer = generator.generate();
+    public GraderLv1() {
+        this.answer = generate();
+    }
+
+    @Override
+    public int generate() {
+        List<Integer> numberList = new ArrayList<>();
+        while (numberList.size() < 3) {
+            int nextNumber = (int)(Math.random() * 9) + 1;
+            if (!numberList.contains(nextNumber)) {
+                numberList.add(nextNumber);
+            }
+        }
+        return concatAll(numberList);
     }
 
     @Override
@@ -53,5 +65,13 @@ public class GraderLv1 implements Grader {
         } else {
             System.out.println(strikeCount + " 스트라이크 " + ballCount + " 볼!");
         }
+    }
+
+    private int concatAll(List<Integer> numberList) {
+        StringBuilder sb = new StringBuilder();
+        for (Integer i : numberList) {
+            sb.append(i);
+        }
+        return Integer.parseInt(sb.toString());
     }
 }

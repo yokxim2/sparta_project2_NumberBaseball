@@ -4,11 +4,11 @@ import control.Controller;
 
 import java.util.Scanner;
 
-public class InputReaderLv2 implements InputReader {
+public class InputReaderLv3 implements InputReader {
 
     Controller controller;
 
-    public InputReaderLv2(Controller controller) {
+    public InputReaderLv3(Controller controller) {
         this.controller = controller;
     }
 
