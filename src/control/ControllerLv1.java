@@ -15,10 +15,9 @@ public class ControllerLv1 implements Controller {
         this.parser = parser;
     }
 
-    public int hit(String userInput) {
+    public int hit(String userInput) {          // 여기서 몇 스트라이크인지 아예 처리!! 차라리 Grader안에서 터트리는 것도 나쁘지 않은듯
         try {
-            int inputInt = parser.parseNumber(userInput);
-            return grader.grade(inputInt);
+            return grader.grade(parser.parseNumber(userInput));
         } catch (BadInputException e) {
             System.out.println(e.getMessage());
         }
