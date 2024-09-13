@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class GraderLv3 implements Grader {
 
-    private final int answer;
+    private int answer;
     private Map<Integer, Integer> matchHistory = new HashMap<>();
 
     private int currentGame = 1;
@@ -72,6 +72,7 @@ public class GraderLv3 implements Grader {
     private void resetGame() {
         currentGame++;
         attemptCount = 0;
+        answer = generate();
     }
 
     private ArrayList<Integer> numberToList(int number) {
