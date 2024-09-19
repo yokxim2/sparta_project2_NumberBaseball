@@ -15,19 +15,14 @@ public class ControllerLv1 implements Controller {
     }
 
     @Override
-    public boolean checkAndScore(String userInput, int digit) {
-        try {
-            parser.setDigit(digit);
-            int input = parser.parseNumber(userInput);
-            if (grader.grade(input, digit) == digit) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (BadInputException e) {
-            System.out.println(e.getMessage());
+    public boolean checkAndScore(String userInput, int digit) throws BadInputException {
+        parser.setDigit(digit);
+        int input = parser.parseNumber(userInput);
+        if (grader.grade(input, digit) == digit) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     @Override

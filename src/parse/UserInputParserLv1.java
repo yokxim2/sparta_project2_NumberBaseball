@@ -9,29 +9,16 @@ public class UserInputParserLv1 implements UserInputParser {
 
     private int digit = 3;
 
-//    public int parseDigit(String input) throws BadInputException {
-//        int number = validateIfPureNumber(input);
-//        validateDigit(number);
-//        this.digit = number;
-//        return number;
-//    }
-
     @Override
     public int parseNumber(String input) throws BadInputException {
-        int number = validateIfPureNumber(input);
-        validateIfPositiveNumber(number);
-        validateZeroNeverUsed(number);
-        validateIfDuplicateNumberUsed(number);
-        validateDigitCount(number);
+        int number = validateIfPureNumber(input);           // 숫자로 이루어져 있는가?
+        validateIfPositiveNumber(number);                   // 값이 음수인가?
+        validateZeroNeverUsed(number);                      // 1 ~ 9 사이 숫자가 사용되었는가?
+        validateIfDuplicateNumberUsed(number);              // 연속되어 같은 숫자가 사용되었는가?
+        validateDigitCount(number);                         // 알맞은 자리수가 입력되었는가?
 
         return number;
     }
-
-//    private void validateDigit(int input) throws WrongDigitInputException {
-//        if (input != 3 && input != 4 && input != 5) {
-//            throw new WrongDigitInputException();
-//        }
-//    }
 
     private int validateIfPureNumber(String input) throws NotNumberException {
         try {

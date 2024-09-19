@@ -40,7 +40,11 @@ public class InputReaderLv4 implements InputReader {
                     }
                     break;
                 case "1":
-                    gameBegin(scanner, digitInput);
+                    try {
+                        gameBegin(scanner, digitInput);
+                    } catch (BadInputException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case "2":
                     controller.getMatchHistory();
@@ -51,7 +55,7 @@ public class InputReaderLv4 implements InputReader {
         }
     }
 
-    private void gameBegin(Scanner scanner, int digitInput) {
+    private void gameBegin(Scanner scanner, int digitInput) throws BadInputException {
         while (true) {
             System.out.println("숫자를 입력하세요: " );
             String userInput = scanner.nextLine();
