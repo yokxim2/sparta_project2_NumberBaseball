@@ -36,8 +36,6 @@ public class GraderLv3 implements Grader {
 
         int strikeCount = 0;
         int ballCount = 0;
-        ArrayList<Integer> answerToList = numberToList(answer);
-        ArrayList<Integer> targetNumberToList = numberToList(number);
 
         // 게임을 새로 시작하거나, 정답을 맞춰서 Reset 된 경우에만 수행된다.
         if (!isAnswerGenerated) {
@@ -46,6 +44,8 @@ public class GraderLv3 implements Grader {
             isAnswerGenerated = true;
         }
 
+        ArrayList<Integer> answerToList = numberToList(answer);
+        ArrayList<Integer> targetNumberToList = numberToList(number);
         attemptCount++;
 
         // 스트라이크, 볼 조건에 해당될 경우 카운터를 증가시킨다.

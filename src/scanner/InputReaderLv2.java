@@ -1,6 +1,7 @@
 package scanner;
 
 import control.Controller;
+import exceptions.BadInputException;
 
 import java.util.Scanner;
 
@@ -25,13 +26,17 @@ public class InputReaderLv2 implements InputReader {
 
             switch (choice) {
                 case "1":
-                    while (true) {
-                        System.out.println("숫자를 입력하세요: " );
-                        String userInput = scanner.nextLine();
+                    try {
+                        while (true) {
+                            System.out.println("숫자를 입력하세요: " );
+                            String userInput = scanner.nextLine();
 
-                        if (!controller.checkAndScore(userInput, digitInput)) {
-                            break;
+                            if (!controller.checkAndScore(userInput, digitInput)) {
+                                break;
+                            }
                         }
+                    } catch (BadInputException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "2":
