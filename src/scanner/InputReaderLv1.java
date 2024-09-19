@@ -14,7 +14,7 @@ public class InputReaderLv1 implements InputReader {
 
     @Override
     public void start() {
-        String digitInput = "3"; // default
+        int digitInput = 3; // default
         Scanner scanner = new Scanner(System.in);
         System.out.println(" < 게임을 시작합니다 > ");
 

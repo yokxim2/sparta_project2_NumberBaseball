@@ -2,23 +2,22 @@ package control;
 
 import exceptions.BadInputException;
 import grade.Grader;
-import grade.GraderLv3;
-import parse.Parser;
+import parse.UserInputParser;
 
 public class ControllerLv1 implements Controller {
 
     Grader grader;
-    Parser parser;
+    UserInputParser parser;
 
-    public ControllerLv1(Grader grader, Parser parser) {
+    public ControllerLv1(Grader grader, UserInputParser parser) {
         this.grader = grader;
         this.parser = parser;
     }
 
     @Override
-    public boolean checkAndScore(String userInput, String digitInput) {
+    public boolean checkAndScore(String userInput, int digit) {
         try {
-            int digit = parser.parseNumber(digitInput);
+            parser.setDigit(digit);
             int input = parser.parseNumber(userInput);
             if (grader.grade(input, digit) == digit) {
                 return true;
