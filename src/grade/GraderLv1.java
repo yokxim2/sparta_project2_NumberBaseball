@@ -24,7 +24,7 @@ public class GraderLv1 implements Grader {
     }
 
     @Override
-    public int grade(int number) {
+    public int grade(int number, int digit) {
         int strikeCount = 0;
         int ballCount = 0;
         ArrayList<Integer> answerToList = numberToList(answer);

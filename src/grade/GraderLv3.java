@@ -1,5 +1,7 @@
 package grade;
 
+import exceptions.NotAllowedDigitsException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Map;
 public class GraderLv3 implements Grader {
 
     private int answer;
+    private int digit;
     private Map<Integer, Integer> matchHistory = new HashMap<>();
 
     private int currentGame = 1;
@@ -30,7 +33,9 @@ public class GraderLv3 implements Grader {
     }
 
     @Override
-    public int grade(int number) {
+    public int grade(int number, int digit) throws NotAllowedDigitsException {
+        this.digit = digit;
+        validateDigitCount(number);
         attemptCount++;
         int strikeCount = 0;
         int ballCount = 0;
@@ -46,12 +51,10 @@ public class GraderLv3 implements Grader {
                 }
             }
         }
-
-        if (strikeCount == 3) {
+        if (strikeCount == digit) {
             saveMatchHistory();
             resetGame();
         }
-
         printResult(strikeCount, ballCount);
         return strikeCount;
     }
@@ -63,6 +66,13 @@ public class GraderLv3 implements Grader {
             System.out.println(i + "번째 게임 : 시도 횟수 - " + matchHistory.get(i));
         }
         System.out.println();
+    }
+
+    private void validateDigitCount(int number) throws NotAllowedDigitsException {
+        String numberStr = Integer.toString(number);
+        if (numberStr.length() != digit) {
+            throw new NotAllowedDigitsException(digit);
+        }
     }
 
     private void saveMatchHistory() {
@@ -86,7 +96,7 @@ public class GraderLv3 implements Grader {
     }
 
     private void printResult(int strikeCount, int ballCount) {
-        if (strikeCount == 3) {
+        if (strikeCount == digit) {
             System.out.println("정답입니다!");
         } else if (strikeCount == 0 && ballCount == 0) {
             System.out.println("아웃!");

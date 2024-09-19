@@ -11,7 +11,6 @@ public class ParserLv1 implements Parser {
     public int parseNumber(String input) throws BadInputException {
         int number = validateIfPureNumber(input);
         validateIfPositiveNumber(number);
-        validateDigitCount(number);
         validateZeroNeverUsed(number);
         validateIfDuplicateNumberUsed(number);
 
@@ -29,12 +28,6 @@ public class ParserLv1 implements Parser {
     private void validateIfPositiveNumber(int number) throws NegativeNumberException {
         if (number < 0) {
             throw new NegativeNumberException();
-        }
-    }
-
-    private void validateDigitCount(int number) throws NotAllowedDigitsException {
-        if (number < 100 || number > 1000) {
-            throw new NotAllowedDigitsException(3);
         }
     }
 

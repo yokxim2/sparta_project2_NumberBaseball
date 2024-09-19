@@ -1,6 +1,6 @@
 package control;
 
 public interface Controller {
-    int checkAndScore(String input);
+    boolean checkAndScore(String input, String digit);
     void getMatchHistory();
 }

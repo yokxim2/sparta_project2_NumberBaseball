@@ -13,6 +13,6 @@ public class GameMain {
         GameMain game = config.createGameMain();
 
         game.inputReader.start();
-        System.out.println("== 게임을 종료합니다. ==");
+        System.out.println("== 게임을 종료합니다. ==");3
     }
 }
