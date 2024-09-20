@@ -18,11 +18,7 @@ public class ControllerLv1 implements Controller {
     public boolean checkAndScore(String userInput, int digit) throws BadInputException {
         parser.setDigit(digit);
         int input = parser.parseNumber(userInput);
-        if (grader.grade(input, digit) == digit) {
-            return true;
-        } else {
-            return false;
-        }
+        return grader.grade(input, digit) == digit;
     }
 
     @Override
