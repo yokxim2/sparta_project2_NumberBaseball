@@ -6,8 +6,8 @@ import parse.UserInputParser;
 
 public class ControllerLv1 implements Controller {
 
-    Grader grader;
-    UserInputParser parser;
+    private final Grader grader;
+    private final UserInputParser parser;
 
     public ControllerLv1(Grader grader, UserInputParser parser) {
         this.grader = grader;

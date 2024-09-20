@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class InputReaderLv4 implements InputReader {
 
-    Controller controller;
-    GameConfig gameConfig;
+    private final Controller controller;
+    private final GameConfig gameConfig;
 
     public InputReaderLv4(Controller controller, GameConfig gameConfig) {
         this.controller = controller;
