@@ -46,7 +46,7 @@ public class UserInputParserLv1 implements UserInputParser {
     }
 
     private void validateIfDuplicateNumberUsed(int number) throws DuplicateNumberException {
-        List numberList = new ArrayList();
+        List<Integer> numberList = new ArrayList<>();
         int num = number;
         while (num > 0) {
             int digit = num % 10;
