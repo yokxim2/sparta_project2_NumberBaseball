@@ -14,7 +14,7 @@ public class GraderLv3 implements Grader {
     private boolean isAnswerGenerated = false;
 
     // 결과 저장 관련 인자
-    private Map<Integer, Integer> matchHistory = new HashMap<>();
+    private final Map<Integer, Integer> matchHistory = new HashMap<>();
     private int currentGame = 1;
     private int attemptCount = 0;
 
