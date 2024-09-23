@@ -39,8 +39,8 @@ public class VersionControl {
         return new InputReaderLv4(controller, gameConfig);  // Lv 4
     }
 
-    public Main createMain() {
+    public BaseballGame createBaseballGame() {
         InputReader inputReader = createInputReader();
-        return new Main(inputReader);   // Lv 1 ~ Lv 4
+        return new BaseballGame(inputReader);   // Lv 1 ~ Lv 4
     }
 }
