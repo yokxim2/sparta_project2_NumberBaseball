@@ -16,10 +16,12 @@ public class GameConfig {
     public void changeDigit(String input) throws BadInputException {
         try {
             digit = Integer.parseInt(input);
-            if (digit != 3 && digit != 4 && digit != 5) {
+            AllowedNumberDigit numberDigit = AllowedNumberDigit.contains(digit);
+
+            if (numberDigit == null) {
                 throw new WrongDigitInputException();
             } else {
-                System.out.println(digit + "자리수 난이도로 설정되었습니다.");
+                System.out.println(numberDigit.getNumberDigit() + "자리수 난이도로 설정되었습니다.");
             }
         } catch (NumberFormatException e) {
             throw new NotNumberException();
