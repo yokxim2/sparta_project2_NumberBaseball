@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42d38b1e-7eb5-438d-bc85-da32a352b9a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config/AllowedNumberDigit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/GameConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="42d38b1e-7eb5-438d-bc85-da32a352b9a8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +125,7 @@
       <workItem from="1726724847722" duration="63000" />
       <workItem from="1726724913440" duration="23000" />
       <workItem from="1726724952208" duration="1068000" />
-      <workItem from="1727075849646" duration="340000" />
+      <workItem from="1727075849646" duration="776000" />
     </task>
     <servers />
   </component>
