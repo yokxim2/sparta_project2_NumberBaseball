@@ -7,8 +7,8 @@ import parse.UserInputParser;
 import parse.UserInputParserLv1;
 import scanner.*;
 
-// 버전 관리 및 객체들의 생성자 주입을 담당하는 클래스
-public class VersionControl {
+// 버전 관리 및 객체들의 생성자 주입을 담당하는 팩토리 클래스
+public class GameFactory {
 
 
     public Grader createGrader() {
@@ -39,8 +39,8 @@ public class VersionControl {
         return new InputReaderLv4(controller, gameConfig);  // Lv 4
     }
 
-    public BaseballGame createBaseballGame() {
+    public void start() {
         InputReader inputReader = createInputReader();
-        return new BaseballGame(inputReader);   // Lv 1 ~ Lv 4
+        inputReader.scan();
     }
 }

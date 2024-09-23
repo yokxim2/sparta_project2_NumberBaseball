@@ -14,7 +14,7 @@ public class InputReaderLv3 implements InputReader {
     }
 
     @Override
-    public void start() {
+    public void scan() {
         int digitInput = 3; // default
         Scanner scanner = new Scanner(System.in);
         System.out.println(" < 환영합니다! 원하시는 번호를 입력해주세요. > ");

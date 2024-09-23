@@ -14,7 +14,7 @@ public class InputReaderLv1 implements InputReader {
     }
 
     @Override
-    public void start() {
+    public void scan() {
         try {
             int digitInput = 3; // default
             Scanner scanner = new Scanner(System.in);
