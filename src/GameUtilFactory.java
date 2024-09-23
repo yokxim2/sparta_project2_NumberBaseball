@@ -8,7 +8,7 @@ import parse.UserInputParserLv1;
 import scanner.*;
 
 // 버전 관리 및 객체들의 생성자 주입을 담당하는 팩토리 클래스
-public class GameFactory {
+public class GameUtilFactory {
 
 
     public Grader createGrader() {
